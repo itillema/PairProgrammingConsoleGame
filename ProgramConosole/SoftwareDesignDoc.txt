@@ -37,5 +37,5 @@ Technical Description
 			- B3/5: Play 5 Games, or play until Player or Computer gets to a score of 3
 
 	- ConsoleRepo (Repository)
-		- Score keeping by Game Mode (Class?)
+		- Score keeping by Game Mode (POCO Class?)
 		- Store players name each game (no matter the Game Mode)

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProgramConosole
 {
-    class Console
+    
+    class ConsoleGameUI
     {
         static void Main(string[] args)
         {
@@ -17,19 +18,24 @@ namespace ProgramConosole
             //Pretty sure all this shit needs to be in the ConsoleUI
 
             //Need computer to choose a random number everytime
-            Random rnd = new Random();
-            var randomNum = rnd.Next(0, 2);
+            /* Random rnd = new Random();
+            var randomNum = rnd.Next(1, 3);
             string compOptions = {"rock", "paper", "scissors" }; //Maybe make enum and assign number values to each string?
             var compChoice = compOptions(randomNum);
+            */
+
+            //Assigning values to enum GameComponents
+            var moveRock
 
             //Store what the players choice is
             var playerChoice = "";
 
-            System.Console.WriteLine("What's your choice: Rock, Paper, or Scissors?");
-            System.Console.WriteLine("\nPlease enter your choice below:");
-            System.Console.WriteLine("Choice: ");
+            System.Console.WriteLine("Welcome to Rock, Paper, Scissors. What game would you like to play?\n" +
+                "1. Single Game\n" +
+                "2. Best of Three Games\n" +
+                "3. Best of Five Games");
             //make inputs lowercase
-            playerChoice = System.Console.ReadLine().ToLower();
+            playerChoice = System.Console.ReadLine(GameModes)
 
             System.Console.Clear();
 

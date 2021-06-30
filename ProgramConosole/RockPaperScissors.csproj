@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleRepo.cs" />
-    <Compile Include="ConsoleUI.cs" />
-    <Compile Include="Console.cs" />
+    <Compile Include="ConsoleGame.cs" />
+    <Compile Include="ConsoleRepository.cs" />
+    <Compile Include="ConsoleGameUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

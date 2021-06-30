@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace ProgramConosole
 {
-    class ConsoleRepo
+    class ConsoleRepository
     {
+        ConsoleGame consoleRepo = new ConsoleGame();
+
+        public void Run()
+        {
+
+        }
     }
 }
