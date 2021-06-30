@@ -80,7 +80,7 @@ namespace ProgramConosole
 
             // Display PlayerName, CompName, PlayerScore, CompScore
             Console.WriteLine($"{newGame.PlayerName} - Score: {newGame.PlayerScore}");
-            Console.WriteLine($"Computer 1 - Score: {newGame.CompScore}");
+            Console.WriteLine($"Computer - Score: {newGame.CompScore}");
             
 
             // Ask player to input Rock, Paper, or Scissors (writeline)
