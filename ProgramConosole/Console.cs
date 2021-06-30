@@ -19,7 +19,7 @@ namespace ProgramConosole
             //Need computer to choose a random number everytime
             Random rnd = new Random();
             var randomNum = rnd.Next(0, 2);
-            string compOptions = {"rock", "paper", "scissors" };
+            string compOptions = {"rock", "paper", "scissors" }; //Maybe make enum and assign number values to each string?
             var compChoice = compOptions(randomNum);
 
             //Store what the players choice is

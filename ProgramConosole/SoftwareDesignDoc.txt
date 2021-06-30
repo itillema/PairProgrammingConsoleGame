@@ -1,0 +1,41 @@
+﻿Software Design Doc
+
+Functional Description
+
+	- This console app should be able to emulate the game of "Rock Paper Scissors (RPS)".
+	- This will include all standard rules and game modes.
+
+Feature Scope
+
+	- Standard RPS Rules
+		- Rock beats Scissors
+		- Scissors beats Paper
+		- Paper beats Rock
+
+	- Game Modes
+		- Single Game
+		- Best 2 out of 3 Games
+		- Best 3 out of 5 Games
+
+Technical Description
+
+	- ConsoleUI (UI)
+		- Start app 
+		- Select game mode or exit app
+		- Ask player to input name before game starts
+		- Play Game(s) [Player inputs move]
+		- Display (Print) score for each game
+		- Display (Print) winner or loser after each game
+		- Clear previous game and prompt new game or exit (stay on loop or exit)
+
+	- Console (Program)
+		- Start app / keep app running on infinate loop until exited
+		- Player vs Computer
+		- Game mode logic
+			- SG: Play one Game, winner is determined after one game
+			- B2/3: Play 3 Games, or play until Player or Computer gets to a score of 2
+			- B3/5: Play 5 Games, or play until Player or Computer gets to a score of 3
+
+	- ConsoleRepo (Repository)
+		- Score keeping by Game Mode (Class?)
+		- Store players name each game (no matter the Game Mode)
