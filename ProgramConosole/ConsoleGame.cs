@@ -28,7 +28,7 @@ namespace ProgramConosole
         public GameModes TypeOfGame { get; set; }
         public GameComponents GameMoves { get; set; }
 
-        //Constructor---One Empty, one overloaded
+        //Constructor---One Empty, one overloaded with properties
         public ConsoleGame() { }
 
         public ConsoleGame(string name, int playerScore, int compScore, GameModes modes, GameComponents moves)
@@ -39,9 +39,6 @@ namespace ProgramConosole
             TypeOfGame = modes;
             GameMoves = moves;
         }
-        // Create
-        // Read
-        // Update
-        // Delete
+        
     }
 }

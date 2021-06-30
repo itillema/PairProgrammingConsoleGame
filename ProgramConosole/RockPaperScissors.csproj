@@ -43,9 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleUI.cs" />
     <Compile Include="ConsoleGame.cs" />
     <Compile Include="ConsoleRepository.cs" />
-    <Compile Include="ConsoleGameUI.cs" />
+    <Compile Include="ConsoleProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

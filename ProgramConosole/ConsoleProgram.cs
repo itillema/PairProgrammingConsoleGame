@@ -7,9 +7,14 @@ using System.Threading.Tasks;
 namespace ProgramConosole
 {
     
-    class ConsoleGameUI
+    class ConsoleProgram
     {
         static void Main(string[] args)
+        {
+            ConsoleUI program = new ConsoleUI();
+            program.Run();
+        }
+        
         {
             //Run the app, keep it running
             program 
