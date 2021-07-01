@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleUI.cs" />
-    <Compile Include="ConsoleGame.cs" />
+    <Compile Include="ConsoleGameServices.cs" />
     <Compile Include="ConsoleRepository.cs" />
     <Compile Include="ConsoleProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

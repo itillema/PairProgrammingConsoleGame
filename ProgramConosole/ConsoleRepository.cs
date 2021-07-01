@@ -8,22 +8,22 @@ namespace ProgramConosole
 {
     public class ConsoleRepsoitory
     {
-        private List<ConsoleGame> _listOfCompontents = new List<ConsoleGame>();
+        private List<ConsoleGameServices> _listOfCompontents = new List<ConsoleGameServices>();
 
         // Create
         // --- Create new game(s) by Game Mode
         // --- Create new player (but don't save player after game is over)
-        public void AddGame(ConsoleGame addGameMode)
+        public void AddGame(ConsoleGameServices addGameMode)
         {
             _listOfCompontents.Add(addGameMode);
         }
-        public void AddPlayer(ConsoleGame addPlayerName)
+        public void AddPlayer(ConsoleGameServices addPlayerName)
         {
             _listOfCompontents.Add(addPlayerName);
         }
 
         // Read
-        public List<ConsoleGame> GetGameInfo()
+        public List<ConsoleGameServices> GetGameInfo()
         {
             return _listOfCompontents;
         }

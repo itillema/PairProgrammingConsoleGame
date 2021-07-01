@@ -9,8 +9,8 @@ namespace ProgramConosole
     public enum GameModes
     {
         singleGame = 1,
-        bestOfThree ,
-        bestOfFive
+        bestOfThree = 3,
+        bestOfFive = 5
     }
     public enum GameComponents
     {
@@ -20,7 +20,7 @@ namespace ProgramConosole
     }
     
     //POCO
-    public class ConsoleGame
+    public class ConsoleGameServices
     {
         public string PlayerName { get; set; }
         public int PlayerScore { get; set; }
@@ -31,9 +31,9 @@ namespace ProgramConosole
         public GameComponents GameMoves { get; set; }
 
         //Constructor---One Empty, one overloaded with properties
-        public ConsoleGame() { }
+        public ConsoleGameServices() { }
 
-        public ConsoleGame(string name, int playerScore, int compScore, GameModes modes, GameComponents moves, string playerChoice, string compChoice)
+        public ConsoleGameServices(string name, int playerScore, int compScore, GameModes modes, GameComponents moves, string playerChoice, string compChoice)
         {
             PlayerName = name;
             PlayerScore = playerScore;
