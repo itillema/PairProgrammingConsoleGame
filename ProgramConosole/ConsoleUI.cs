@@ -109,27 +109,26 @@ namespace ProgramConosole
                     {
                         case "1":
                             // Rock 
-                            // Hard time coming up with what to do here.
-
+                            newGame.PlayerChoice = "Rock"; 
                             break;
                         case "2":
                             // Paper
-
+                            newGame.PlayerChoice = "Paper";
                             break;
                         case "3":
                             // Scissors
-
+                            newGame.PlayerChoice = "Scissors";
                             break;
                         //default:
                             //Console.WriteLine("Please enter a valid move (1 - 3).");
                     }
 
                     // Have computer return random input
-                     
+                    /*
                     Random rnd = new Random();
                     var randomNum = rnd.Next(1, 3);
                     //string compOptions = {}; //Maybe make enum and assign number values to each string?
-                    newGame.CompChoice = newGame.(randomNum); 
+                    newGame.CompChoice = newGame.(randomNum); */
                     
 
                     // Return both player and computer input, then press any button to continue
