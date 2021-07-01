@@ -31,10 +31,10 @@ namespace ProgramConosole
                     "4. Exit Game");
 
                 // Get users input
-                string input = Console.ReadLine();
+                string inputMode = Console.ReadLine();
 
                 // Evaluate user's input and act accordingly
-                switch (input)
+                switch (inputMode)
                 {
                     case "1":
                         // Single Game
@@ -54,7 +54,7 @@ namespace ProgramConosole
                         keepRunning = false;
                         break;
                     default:
-                        Console.WriteLine("Please enter a valid number.");
+                        Console.WriteLine("Please enter a valid mode (1 - 3) or exit the game (4).");
                 }
 
                 Console.WriteLine("Please press any key to continue..");
@@ -77,26 +77,80 @@ namespace ProgramConosole
             Console.WriteLine("Please press any key to continue..");
             Console.ReadKey();
             Console.Clear();
+            SingleGameMenu();
 
-            // Display PlayerName, CompName, PlayerScore, CompScore
-            Console.WriteLine($"{newGame.PlayerName} - Score: {newGame.PlayerScore}");
-            Console.WriteLine($"Computer - Score: {newGame.CompScore}");
-            
+            void SingleGameMenu()
+            {
 
-            // Ask player to input Rock, Paper, or Scissors (writeline)
 
-            // Take user input (readline)
+                // Display PlayerName, CompName, PlayerScore, CompScore
+                Console.WriteLine($"{newGame.PlayerName} - Score: {newGame.PlayerScore}");
+                Console.WriteLine($"Computer - Score: {newGame.CompScore}");
 
-            // Have computer return random input
 
-            // Run logic
+                // Ask player to input Rock, Paper, or Scissors (writeline)
+                System.Console.WriteLine("What's your move?\n" +
+                        "1. Rock\n" +
+                        "2. Paper\n" +
+                        "3. Scissors");
 
-            // Return both player and computer input, then press any button to continue
+                // Take user input (readline) and act accordingly
+                newGame.PlayerChoice = Console.ReadLine();
+                switch (newGame.PlayerChoice)
+                {
+                    case "1":
+                        // Rock --- Save as newGame.PlayerChoice?
+                         
+                        break;
+                    case "2":
+                        // Paper
 
-            // Return updated PlayerName, CompName, PlayerScore, and CompScore
+                        break;
+                    case "3":
+                        // Scissors
 
-            // Return (writeline) if player wins or loses game and a closing statement: Thanks for playing! Press any key to return to menu, etc.
+                        break;
+                    default:
+                        Console.WriteLine("Please enter a valid move (1 - 3).");
+                }
 
+                // Have computer return random input
+                /* 
+                 * Random rnd = new Random();
+                var randomNum = rnd.Next(1, 3);
+                string compOptions = { "rock", "paper", "scissors" }; //Maybe make enum and assign number values to each string?
+                var compChoice = compOptions(randomNum); 
+                */
+
+                // Return both player and computer input, then press any button to continue
+                System.Console.WriteLine($"You chose: {newGame.PlayerChoice}");
+                System.Console.WriteLine($"The computer chose: {newGame.CompChoice}\n");
+
+                // Run logic
+                if (newGame.PlayerChoice == newGame.CompChoice)
+                {
+                    System.Console.WriteLine("You both chose the same thing. Your game ends in a draw.");
+                }
+                else if ((newGame.PlayerChoice == "rock" && newGame.CompChoice == "scissors") || (newGame.PlayerChoice == "scissors" && newGame.CompChoice == "paper") || (newGame.PlayerChoice == "paper" && newGame.CompChoice == "rock"))
+                {
+                    System.Console.WriteLine("You won the game!");
+                }
+                else if ((newGame.PlayerChoice == "scissors" && newGame.CompChoice == "rock") || (newGame.PlayerChoice == "paper" && newGame.CompChoice == "scissors") || (newGame.PlayerChoice == "rock" && newGame.CompChoice == "paper"))
+                {
+                    System.Console.WriteLine("Sorry, you lost the game...");
+                }
+                else
+                {
+                    System.Console.WriteLine("That's not a valid game. Try again");
+                    // Return player to SingleGameMenu
+                }
+
+                System.Console.ReadLine();
+
+                // Return updated PlayerName, CompName, PlayerScore, and CompScore
+
+                // Return (writeline) if player wins or loses game and a closing statement: Thanks for playing! Press any key to return to menu, etc.
+            }
             // Return to Menu
 
         }
