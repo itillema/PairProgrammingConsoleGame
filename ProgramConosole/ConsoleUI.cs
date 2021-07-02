@@ -13,12 +13,13 @@ namespace ProgramConosole
         {
             Menu();
         }
+        
 
         //Menu
         private void Menu()
         {
-            bool keepRunning = true;
-            while (keepRunning)
+            bool keepMenuRunning = true;
+            while (keepMenuRunning)
             {
 
 
@@ -55,7 +56,7 @@ namespace ProgramConosole
                         //Exit
                         Console.Clear();
                         Console.WriteLine("Later!");
-                        keepRunning = false;
+                        keepMenuRunning = false;
                         break;
                     //default:
                         //Console.WriteLine("Please enter a valid mode (1 - 3) or exit the game (4).");
@@ -64,15 +65,18 @@ namespace ProgramConosole
                 Console.WriteLine("Press any key to exit...");
                 Console.ReadKey();
                 Console.Clear();
+                
             }
+            
 
         }
+        
 
         // Single Game Mode
         private void CreateSingleGame()
         {
-            bool keepRunning = true;
-            while (keepRunning)
+            bool keepSingleGameRunning = true;
+            while (keepSingleGameRunning)
             {
 
 
@@ -119,22 +123,39 @@ namespace ProgramConosole
                             // Scissors
                             newGame.PlayerChoice = "Scissors";
                             break;
-                        //default:
-                            //Console.WriteLine("Please enter a valid move (1 - 3).");
+                        default:
+                            Console.WriteLine("Please enter a valid move (1 - 3).");
+                            break;
                     }
 
                     // Have computer return random input
-                    /*
+
                     Random rnd = new Random();
-                    var randomNum = rnd.Next(1, 3);
-                    //string compOptions = {}; //Maybe make enum and assign number values to each string?
-                    newGame.CompChoice = newGame.(randomNum); */
+                    int randomNum = rnd.Next(1, 3);
                     
+                    switch (randomNum)
+                    {
+                        case 1:
+                            // Rock 
+                            newGame.CompChoice = "Rock";
+                            break;
+                        case 2:
+                            // Paper
+                            newGame.CompChoice = "Paper";
+                            break;
+                        case 3:
+                            // Scissors
+                            newGame.CompChoice = "Scissors";
+                            break;
+                        default:
+                            Console.WriteLine("Please enter a valid move (1 - 3).");
+                            break;
+                    }
 
                     // Return both player and computer input, then press any button to continue
                     System.Console.WriteLine($"You chose: {newGame.PlayerChoice}");
                     System.Console.WriteLine($"The computer chose: {newGame.CompChoice}\n");
-                    Console.WriteLine("Please press any key to continue..");
+                    Console.WriteLine("Please press any key to continue...");
                     Console.ReadKey();
                     Console.Clear();
 
@@ -142,29 +163,54 @@ namespace ProgramConosole
                     if (newGame.PlayerChoice == newGame.CompChoice)
                     {
                         System.Console.WriteLine("You both chose the same thing. Your game ends in a draw.");
+                        Console.WriteLine("Please press any key to continue...");
+                        Console.ReadKey();
+                        Console.Clear();
                     }
-                    else if ((newGame.PlayerChoice == "rock" && newGame.CompChoice == "scissors") || (newGame.PlayerChoice == "scissors" && newGame.CompChoice == "paper") || (newGame.PlayerChoice == "paper" && newGame.CompChoice == "rock"))
+                    else if ((newGame.PlayerChoice == "Rock" && newGame.CompChoice == "Scissors") || (newGame.PlayerChoice == "Scissors" && newGame.CompChoice == "Paper") || (newGame.PlayerChoice == "Paper" && newGame.CompChoice == "Rock"))
                     {
                         System.Console.WriteLine("You won the game!");
+                        Console.WriteLine("Please press any key to continue...");
+                        Console.ReadKey();
+                        Console.Clear();
 
                     }
-                    else if ((newGame.PlayerChoice == "scissors" && newGame.CompChoice == "rock") || (newGame.PlayerChoice == "paper" && newGame.CompChoice == "scissors") || (newGame.PlayerChoice == "rock" && newGame.CompChoice == "paper"))
+                    else if ((newGame.PlayerChoice == "Scissors" && newGame.CompChoice == "Rock") || (newGame.PlayerChoice == "Paper" && newGame.CompChoice == "Scissors") || (newGame.PlayerChoice == "Rock" && newGame.CompChoice == "Paper"))
                     {
                         System.Console.WriteLine("Sorry, you lost the game...");
+                        Console.WriteLine("Please press any key to continue...");
+                        Console.ReadKey();
+                        Console.Clear();
                     }
                     else
                     {
                         System.Console.WriteLine("That's not a valid game. Try again");
-                        // Return player to SingleGameMenu
+                        Console.WriteLine("Please press any key to continue...");
+                        Console.ReadKey();
+                        Console.Clear();
                     }
-
-                    System.Console.ReadLine();
+                    
 
                     // Return updated PlayerName, CompName, PlayerScore, and CompScore
 
                     // Return (writeline) if player wins or loses game and a closing statement: Thanks for playing! Press any key to return to menu, etc.
                 }
                 // Return to Menu
+                Console.WriteLine("Thanks for playing!\n" +
+                    "1. Return to Main Menu\n" +
+                    "2. Play Single Game again");
+                string inputResult = Console.ReadLine();
+                switch (inputResult)
+                {
+                    case "1":
+                        Console.Clear();
+                        Menu();
+                        break;
+                    default:
+                        Console.Clear();
+                        CreateSingleGame();
+                        break;
+                }
             }
         }
 

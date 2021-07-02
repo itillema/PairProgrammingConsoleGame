@@ -17,6 +17,8 @@ namespace ProgramConosole
         rock = 1,
         paper,
         scissors
+            //lizard
+            //spock
     }
     
     //POCO
@@ -43,6 +45,5 @@ namespace ProgramConosole
             PlayerChoice = playerChoice;
             CompChoice = compChoice;
         }
-        
     }
 }
