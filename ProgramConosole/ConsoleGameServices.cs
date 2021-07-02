@@ -31,11 +31,14 @@ namespace ProgramConosole
         public string CompChoice { get; set; }
         public GameModes TypeOfGame { get; set; }
         public GameComponents GameMoves { get; set; }
+        public int PlayerResult { get; set; }
+        public int CompResult { get; set; }
+        public int GameLoopTimes { get; set; }
 
         //Constructor---One Empty, one overloaded with properties
         public ConsoleGameServices() { }
 
-        public ConsoleGameServices(string name, int playerScore, int compScore, GameModes modes, GameComponents moves, string playerChoice, string compChoice)
+        public ConsoleGameServices(string name, int playerScore, int compScore, GameModes modes, GameComponents moves, string playerChoice, string compChoice, int playerResult, int compResult, int gameLoopTimes)
         {
             PlayerName = name;
             PlayerScore = playerScore;
@@ -44,6 +47,11 @@ namespace ProgramConosole
             GameMoves = moves;
             PlayerChoice = playerChoice;
             CompChoice = compChoice;
+            PlayerResult = playerResult;
+            CompResult = compResult;
+            GameLoopTimes = gameLoopTimes;
         }
+        
+        
     }
 }
